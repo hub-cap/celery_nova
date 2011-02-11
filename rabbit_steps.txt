@@ -1,0 +1,12 @@
+# user management
+$ sudo rabbitmqctl add_user admin admin72
+$ sudo rabbitmqctl delete_user guest
+$ sudo rabbitmqctl list_users
+
+# vhost management
+$ sudo rabbitmqctl set_permissions -p / admin ".*" ".*" ".*"
+
+# resetting
+$ sudo rabbitmqctl stop_app
+$ sudo rabbitmqctl reset
+$ sudo rabbitmqctl start_app

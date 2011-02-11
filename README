@@ -1,0 +1,1 @@
+This is a simple app used to show how the current rpc.py in nova works in celery speak. There is a direct exchanges for each worker:hostname (which i have not properly sorted out yet, any help would be appreciated!), and a fanout exchange to all workers'.
