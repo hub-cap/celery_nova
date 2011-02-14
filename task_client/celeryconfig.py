@@ -5,18 +5,12 @@ BROKER_PORT = 5672
 # BROKER_USER = "admin"
 # BROKER_PASSWORD = "admin72"
 CELERY_RESULT_BACKEND = "amqp"
-CELERY_DEFAULT_EXCHANGE_TYPE = "fanout"
-CELERY_DEFAULT_EXCHANGE = "guestagents"
+CELERY_DEFAULT_EXCHANGE = "guestagents.direct"
 HOSTNAME = gethostname()
 CELERY_IMPORTS = ("tasks", )
 CELERY_QUEUES = { 
-    "guestagents.%s.broadcast" % HOSTNAME : {
-        "binding_key": "guestagents.%s" % HOSTNAME,
-    },
     "guestagents.%s" % HOSTNAME : {
         "binding_key": "guestagents.%s" % HOSTNAME,
-        "exchange_type": "direct",
         "exchange": "guestagents.direct",
-    },
-    
+    },   
 }

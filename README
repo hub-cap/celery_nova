@@ -1,1 +1,1 @@
-This is a simple app used to show how the current rpc.py in nova works in celery speak. There is a direct exchanges for each worker:hostname (which i have not properly sorted out yet, any help would be appreciated!), and a fanout exchange to all workers'.
+This is a simple app used to show how the celery client cna be used for our purpose. There is a single Q for each client and the server.py shows how to send a message and wait for a response.
