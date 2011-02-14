@@ -20,7 +20,7 @@ BROADCAST = {
 }
 NODE = {
     "exchange_type": "direct",
-    "exchange": "guestagents.node",
+    "exchange": "guestagents.direct",
 }
 CELERY_ROUTES = {
     "tasks.do_on_all_machines": BROADCAST,

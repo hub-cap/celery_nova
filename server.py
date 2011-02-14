@@ -8,5 +8,6 @@ do_on_all_machines.apply_async(args=["FOO"])
 print "sent do_on_all_machines\n\n"
 
 # Case where its sent to a single task node
-add_user.apply_async(args=["user", "pass"], queue="guestagents.host1")
-print "sent add_user\n\n"
+add_user.apply_async(args=["user", "pass"], routing_key="guestagents.host1")
+add_user.apply_async(args=["user", "pass"], routing_key="guestagents.host1")
+print "sent add_user 2x times to the same host\n\n"

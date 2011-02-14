@@ -10,7 +10,13 @@ CELERY_DEFAULT_EXCHANGE = "guestagents"
 HOSTNAME = gethostname()
 CELERY_IMPORTS = ("tasks", )
 CELERY_QUEUES = { 
-    "guestagents.%s" % HOSTNAME : {
+    "guestagents.%s.broadcast" % HOSTNAME : {
         "binding_key": "guestagents.%s" % HOSTNAME,
     },
+    "guestagents.%s" % HOSTNAME : {
+        "binding_key": "guestagents.%s" % HOSTNAME,
+        "exchange_type": "direct",
+        "exchange": "guestagents.direct",
+    },
+    
 }
